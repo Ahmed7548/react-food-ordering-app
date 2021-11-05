@@ -1,0 +1,38 @@
+.cart {
+    position: relative;
+}
+
+.total {
+    font-size: 25px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0.5rem 0 0;
+}
+
+.buttons button{
+    padding: 0.35rem;
+    margin: 10px;
+    width: 5rem;
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid rgb(136, 74, 3);
+    color:  rgb(136, 74, 3);
+    border-radius: 2rem;
+    outline: 0;
+}
+.buttons button:hover{
+    transform: scale(0.99);
+}
+
+.buttons .order{
+    background-color:  rgb(136, 74, 3);
+    color: white;
+    margin-right: 0;
+}
+

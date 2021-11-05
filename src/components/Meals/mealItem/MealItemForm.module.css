@@ -1,0 +1,22 @@
+.form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.form input{
+    margin: 0.5rem 0;
+    width: 3rem;
+}
+
+.form button{
+    background-color: rgb(170, 104, 17);
+    width: 5rem;
+    padding: 0.4rem;
+    border-radius: 1rem;
+    outline: 0;
+    border: 0;
+
+}

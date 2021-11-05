@@ -1,0 +1,22 @@
+.input{
+    display: flex;
+    align-items: baseline;
+    
+}
+
+.input label{
+    display: inline-block;
+    color: rgb(170, 104, 17);
+    font-weight: 700;
+    margin-right: 0.5rem;
+}
+
+.input input{
+    display: inline-block;
+    outline: 0;
+    border:0.5px solid rgb(170, 104, 17);
+    color: rgb(170, 104, 17);
+    padding: 0.20em;
+    font-weight: 600;
+    text-align: center ;
+}
