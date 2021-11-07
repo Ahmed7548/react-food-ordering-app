@@ -1,27 +1,62 @@
-.checkOut{
-width: 100%;
+.checkOut {
+  width: 100%;
+  height: 250px;
 }
-.checkOut{
-    width: 100%;
-    display: block;
-}
-.checkOut input {
- 
- outline: 0;
- background-color: transparent;
- border-radius: 4px;
-
- color: rgb(136, 74, 3);
-
- text-align: left;
+.checkOut .input {
+  margin: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.checkOut input[type="email"] {
-    /* border: 0;
+.checkOut .input label {
+  flex-basis: 6rem;
+  color: rgb(136, 74, 3);
+}
+
+.checkOut .input input {
+  width: 60%;
+  border: 1px solid rgb(136, 74, 3);
+  border-radius: 2px;
+  padding: 5px;
+  color: rgb(95, 55, 9);
+}
+
+.checkOut .input input:focus {
+  outline: 1px inset rgb(196, 106, 4);
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0.5rem 0 0;
+}
+
+.buttons button{
+    padding: 0.35rem;
+    margin: 10px;
+    width: 5rem;
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid rgb(136, 74, 3);
+    color:  rgb(136, 74, 3);
+    border-radius: 2rem;
     outline: 0;
-    background-color: transparent;
-    border-radius: 4px;
-    height: 2rem;
-    color: rgb(136, 74, 3); */
-    width: 80%;
-   }
+    cursor: pointer;
+}
+.buttons button:hover{
+    transform: scale(0.99);
+}
+
+.buttons .confirm{
+    background-color:  rgb(136, 74, 3);
+    color: white;
+    margin-right: 0;
+}
+
+
+.buttons .confirm:disabled{
+    cursor:not-allowed
+}
+
+

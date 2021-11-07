@@ -81,14 +81,25 @@ const reducerFunction = (state, action) => {
 
   return initialValue;
 };
+
+
 const CheckOut = (props) => {
-  const submitHandle = (event) => {
-    event.preventDefault();
-  };
-  const [inputStates, dispatchInputStates] = useReducer(
-    reducerFunction,
-    initialValue
-  );
+    const [inputStates, dispatchInputStates] = useReducer(
+        reducerFunction,
+        initialValue
+        );
+        const { name, street, postalCode, city } = inputStates;
+        const submitHandle = (event) => {
+            event.preventDefault();
+            const userData = {
+                name: name.value,
+                street: street.value,
+                postalCode: postalCode.value,
+                city:city.value
+            }
+            props.onSubmit(userData)
+            
+        };
 
   const nameHandle = (event) => {
     dispatchInputStates({ type: "NACHANGE", value: event.target.value });
@@ -105,13 +116,15 @@ const CheckOut = (props) => {
   const cityHandle = (event) => {
     dispatchInputStates({ type: "CTCHANGE", value: event.target.value });
   };
-  const { name, street, postalCode, city } = inputStates;
-  console.log(postalCode.isValid);
+    
+    const submitability = name.isValid && street.isValid && postalCode.isValid && city.isValid
+    
+    console.log(submitability)
 
   return (
     <form className={classes.checkOut} onSubmit={submitHandle}>
-      <div>
-        {" "}
+      <div className={classes.input}>
+        {""}
         <label htmlFor="name">Your name:</label>
         <input
           type="text"
@@ -121,7 +134,7 @@ const CheckOut = (props) => {
           onChange={nameHandle}
         ></input>
       </div>
-      <div>
+      <div className={classes.input}>
         {" "}
         <label htmlFor="street">street:</label>
         <input
@@ -132,7 +145,7 @@ const CheckOut = (props) => {
           onChange={streetHandle}
         ></input>
       </div>
-      <div>
+      <div className={classes.input}>
         {" "}
         <label htmlFor="postal-code">postal-code:</label>
         <input
@@ -143,7 +156,7 @@ const CheckOut = (props) => {
           onChange={postalCodeHandle}
         ></input>
       </div>
-      <div>
+      <div className={classes.input}>
         <label htmlFor="city">city:</label>
         <input
           type="text"
@@ -153,10 +166,12 @@ const CheckOut = (props) => {
           onChange={cityHandle}
         ></input>
       </div>
-      <button type="submit">confirm</button>
-      <button type="button" onClick={props.onClose}>
-        cancel
-      </button>
+      <div className={classes.buttons}>
+        <button type="submit" className={classes.confirm} disabled={!submitability}>confirm</button>
+        <button type="button" onClick={props.onClose}>
+          cancel
+        </button>
+      </div>
     </form>
   );
 };
