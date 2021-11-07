@@ -1,0 +1,27 @@
+.checkOut{
+width: 100%;
+}
+.checkOut{
+    width: 100%;
+    display: block;
+}
+.checkOut input {
+ 
+ outline: 0;
+ background-color: transparent;
+ border-radius: 4px;
+
+ color: rgb(136, 74, 3);
+
+ text-align: left;
+}
+
+.checkOut input[type="email"] {
+    /* border: 0;
+    outline: 0;
+    background-color: transparent;
+    border-radius: 4px;
+    height: 2rem;
+    color: rgb(136, 74, 3); */
+    width: 80%;
+   }

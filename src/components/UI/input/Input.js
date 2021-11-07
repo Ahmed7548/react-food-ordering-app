@@ -4,8 +4,8 @@ import classes from "./input.module.css"
 const Input = (props) => {
     const input = useRef()
 
-    const changeHandler = () => {
-        props.onChange(input.current.value)
+    const changeHandler = (event) => {
+        props.onChange(event.target.value)
     }
     return (
         <div className={classes.input}>

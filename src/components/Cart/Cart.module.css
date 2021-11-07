@@ -36,3 +36,7 @@
     margin-right: 0;
 }
 
+
+.buttons .order:disabled{
+    cursor:not-allowed
+}
